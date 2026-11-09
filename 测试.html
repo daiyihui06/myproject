@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试页面</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      background: #f4f6fa;
+      color: #1f2937;
+      padding: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 48px 56px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #6b7280;
+      margin-bottom: 28px;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 15px;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover { background: #1d4ed8; }
+    button:active { transform: scale(0.97); }
+
+    #tip {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #2563eb;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>测试页面</h1>
+    <p>这是一个简单的 HTML 测试文件，<br>用于验证页面是否能正常打开。</p>
+    <button id="btn">点我一下</button>
+    <div id="tip"></div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const tip = document.getElementById('tip');
+    let count = 0;
+
+    btn.addEventListener('click', () => {
+      count++;
+      tip.textContent = `已点击 ${count} 次 · ${new Date().toLocaleTimeString('zh-CN')}`;
+    });
+  </script>
+</body>
+</html>
